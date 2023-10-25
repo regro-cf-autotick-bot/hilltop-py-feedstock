@@ -1,13 +1,14 @@
 {% set name = "hilltop-py" %}
-{% set version = "2.2.4" %}
+{% set package_name = "hilltop_py" %}
+{% set version = "2.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hilltop-py-{{ version }}.tar.gz
-  sha256: 56a167a256426273502577dcceac63f87f50d6dd8a16df7854d08a5ccdd665fa
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ package_name }}-{{ version }}.tar.gz
+  sha256: 9aed54b9a60cf30840fd272a8fc39653f579c162852b49cffa87c74366173a13
 
 build:
   noarch: python
@@ -18,6 +19,7 @@ requirements:
   host:
     - python >=3.8
     - pip
+    - hatchling
   run:
     - python >=3.8
     - pandas
@@ -35,7 +37,7 @@ test:
 
 about:
   home: https://github.com/mullenkamp/hilltop-py
-  summary: Functions to access Hilltop data
+  summary: Tools to access Hilltop data
   license: Apache-2.0
   license_file: LICENSE.txt
 
